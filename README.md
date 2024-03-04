@@ -13,6 +13,7 @@ về mô hình hồi quy tuyến tính, mô hình hồi quy tuyến tính đơn,
 hợp của mô hình hồi quy tuyến tính đa biến và áp dụng mô hình vào việc ứng dụng, giải
 quyết bài toán dự báo thực tế.
 
+## THỬ NGHIỆM SỐ
 Bộ dữ liệu được sử dụng gồm có các đặc trưng sau:
 
 • Brand: Tên thương hiệu của xe.
