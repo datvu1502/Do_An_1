@@ -41,5 +41,6 @@ Thực hiện đổi biến năm sản xuất Year thành biến tuổi của xe
 
 # Bước 1: Tiền xử lý dữ liệu
 • Tổng quan về bộ dữ liệu:
-![Uploading image.png…]()
+![image](https://github.com/datvu1502/Do_An_1/assets/118582440/72ff9de5-c99a-409e-ad8a-9dcea3c96ed0)
+
 
