@@ -14,6 +14,7 @@ hợp của mô hình hồi quy tuyến tính đa biến và áp dụng mô hìn
 quyết bài toán dự báo thực tế.
 
 Bộ dữ liệu được sử dụng gồm có các đặc trưng sau:
+
 • Brand: Tên thương hiệu của xe.
 
 • Year: Năm sản xuất xe.
@@ -102,6 +103,7 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 –	Ta thấy có 2 cặp biến Power - Engine và Fuel_Diesel - Fuel_Petrol có hệ số tương quan |r| > 0.75. Ta cần loại bỏ 1 trong 2 biến để tránh hiện tượng đa cộng tuyến:
 
 ∗ Loại bỏ biến Engine vì biến Engine có hệ số tương quan với biến dự đoán Price thấp hơn so với biến Power.
+
 ∗ Tương tự loại biến Fuel_Diesel ra khỏi mô hình.
 
 # Bước 2: Xây dựng mô hình
@@ -170,11 +172,11 @@ e = y_train − y_train_predict
 Như vậy, mô hình thỏa mãn các giả định cần thiết của phương pháp ước lượng bình phương cực tiểu.
 
 # Bước 3: Đánh giá mô hình
-## •	Ta sử dụng bộ dữ liệu test để đánh giá mô hình.
-## •	Từ mô hình với các giá trị β vừa tính được ta sẽ tính giá trị dự báo của bộ dữ liệu test và biểu diễn trên đồ thị:
+•	Ta sử dụng bộ dữ liệu test để đánh giá mô hình.
+•	Từ mô hình với các giá trị β vừa tính được ta sẽ tính giá trị dự báo của bộ dữ liệu test và biểu diễn trên đồ thị:
  ![sosanh](https://github.com/datvu1502/Do_An_1/assets/118582440/b93e5ddb-5511-4ea5-85fe-47931b9d20f1)
 
-## •	Trong đó:
+•	Trong đó:
 –	Trục tung là giá trị dự đoán sử dụng mô hình đã ước lượng trên bộ dữ liệu test.
 
 –	Trục hoành là giá trị thực tế.
