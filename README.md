@@ -195,7 +195,6 @@ Như vậy, mô hình thỏa mãn các giả định cần thiết của phươn
 
 ## •	Tiến hành xem xét cụ thể qua sai số và tỷ lệ phần trăm sai lệch:
  
-– Nhận xét:
 
 ∗ Sự chênh lệch lớn nhất là 104,57%, mô hình dự báo giá thấp hơn hơn khoảng 2 lần so với thực tế.
 
