@@ -43,6 +43,7 @@ Thực hiện đổi biến năm sản xuất Year thành biến tuổi của xe
 
 # Bước 1: Tiền xử lý dữ liệu
 ## • Tổng quan về bộ dữ liệu:
+
 ![data2](https://github.com/datvu1502/Do_An_1/assets/118582440/edd15f7c-e941-4751-b5d8-efbee87a44b0)
 
 
@@ -55,10 +56,12 @@ Từ bảng mô tả dữ liệu ở trên ta có thể thấy được:
 –	Các cột dữ liệu còn lại là các dữ liệu dạng số.
 ## •	Xử lý giá trị NULL:
 –	Từ thống kê về các giá trị NULL ta thấy các giá trị mất mát không vượt quá 5% của các cột dữ liệu nên ta có thể loại bỏ các giá trị này.
+
 ![sumnullnull](https://github.com/datvu1502/Do_An_1/assets/118582440/0409b00a-edc3-47c2-ae38-305fd84da292)
 
 
 –	Bộ dữ liệu sau khi loại bỏ các giá trị NULL:
+
 ![datanull](https://github.com/datvu1502/Do_An_1/assets/118582440/84cd5726-b7e1-4fa6-8920-17e5aa1065cd)
 
 
@@ -67,12 +70,14 @@ Từ bảng mô tả dữ liệu ở trên ta có thể thấy được:
 Ta sử dụng trực quan các điểm ngoại lệ thông qua biểu đồ boxlpot để xem xét các điểm ngoại lệ ảnh hưởng đến hiệu suất của mô hình.
 
 Dựa trên đồ thị boxplot, ta xác định các giá trị nằm ngoài hai đường thẳng từ hộp đến giá trị cao nhất và thấp nhất trong khoảng biến thiên. Các giá trị này được coi là outlier.
+
  ![boxplot](https://github.com/datvu1502/Do_An_1/assets/118582440/dc519e0b-df0c-45fb-84bb-d88780235cb2)
 
 
 
 Từ đồ thị trên ta thấy các biến Kilometers,Engine,Power,Price,Ageofcar xuất hiện nhiều các điểm ngoại lại, để tránh giảm hiệu suất mô hình dự đoán ta cần loại bỏ các điểm ngoại lệ.
 Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
+
 ![dataoutlier](https://github.com/datvu1502/Do_An_1/assets/118582440/c2442121-4d5b-41f3-9b57-ab24b050f6d7)
 
  
@@ -89,6 +94,7 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 ∗ Cột Owner: giá trị ’First’ làm cơ sở.
 
 –	Kết quả:
+
 ![biegia](https://github.com/datvu1502/Do_An_1/assets/118582440/5b7a913c-6d36-49ce-8992-e04262fd28aa)
 
 
@@ -99,6 +105,7 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 –	Giữa 2 biến độc lập có hệ số tương quan |r| > 0.75 ta sẽ loại bỏ 1 trong 2 biến để tránh hiện tượng đa cộng tuyến. Biến chúng ta đang cần dự đoán là biến Price nên ta sẽ loại bỏ biến độc lập có hệ số tương quan với Price thấp hơn.
 
 –	Ma trận tương quan:
+
 ![matrantq](https://github.com/datvu1502/Do_An_1/assets/118582440/62820459-4ba8-4a45-b0e7-256ec4c16526)
 
 –	Ta thấy có 2 cặp biến Power - Engine và Fuel_Diesel - Fuel_Petrol có hệ số tương quan |r| > 0.75. Ta cần loại bỏ 1 trong 2 biến để tránh hiện tượng đa cộng tuyến:
@@ -109,17 +116,20 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 
 # Bước 2: Xây dựng mô hình
 ## •	Xem xét sự phụ thuộc của biến dự báo Price với các biến qua đồ thị phân tán:
+
  ![ppnew1](https://github.com/datvu1502/Do_An_1/assets/118582440/6834ae5d-d1ce-49cc-a94a-eb6ca48df58d)
 
 
 => Ta thấy dữ liệu trong các đồ thị có xu hướng tạo thành một đường cong nên để đảm bảo tính tuyến tính ta sẽ tính giá trị log(Price) để đưa các đồ thị về dạng đường thẳng.
 
 –	Kết quả:
+
 ![ppnew2](https://github.com/datvu1502/Do_An_1/assets/118582440/db38ff90-9064-41dd-beb8-2077b1052fa6)
 
 ## •	Xây dựng mô hình hồi quy tuyến tính bằng phương pháp bình phương cực tiểu.
 
 –	Ta chia bộ dữ liệu thành 2 phần tập train và test một cách ngẫu nhiên, với tỷ lệ 80% cho tập train và 20% cho tập test.
+
 ![train](https://github.com/datvu1502/Do_An_1/assets/118582440/1d018be2-11e9-40a3-a1e7-f865b368d7d2)
 
 –	Xây dựng mô hình bằng phương pháp bình phương cực tiểu-OLS có sẵn trong thư viện statsmodels.api với:
@@ -128,12 +138,14 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 ’Brand_Maruti’, ’Brand_Mercedes-Benz’, ’Brand_Toyota’, ’Brand_Volkswagen’, ’Fuel_LPG’, ’Fuel_Petrol’, ’Transmission_Manual’, ’Owner_Fourth&Above’, ’Owner_Second’, ’Owner_Third’.
 
 ∗ Y: ’Price_log’.
+
  ![OLS1](https://github.com/datvu1502/Do_An_1/assets/118582440/7cae1e5a-5fd9-4398-9d3a-67936d613fb7)
 
 
 => Ta thấy giá trị R2 = 0.834 và R2 - hiệu chỉnh = 0.833 nên mô hình của chúng ta khá phù hợp với bộ dữ liệu.
 
 ∗ Các hệ số β tương ứng với các biến ước lượng được. Biến phụ thuộc là log(Price).
+
  ![heso](https://github.com/datvu1502/Do_An_1/assets/118582440/26e352af-c555-4024-ac70-c9c7f52c0db3)
 
 
@@ -155,16 +167,19 @@ e = y_train − y_train_predict
 => Ta thấy đồ thị phân phối của e có xấp xỉ với dạng đồ thị phân phối chuẩn.
 
 –	Giá trị kỳ vọng của phần dư:
+
  ![kyvonge](https://github.com/datvu1502/Do_An_1/assets/118582440/5f166e42-257b-47bd-8473-791fc21231b7)
 
 => Thỏa mãn giả thiết kỳ vọng sai số = 0
 
 –	Kiểm định White kiểm tra phương sai sai số thay đổi:
+
  ![white1](https://github.com/datvu1502/Do_An_1/assets/118582440/2acf84d1-e6f9-4511-b76f-faf52343fb72)
 
 => Ta có: p-value > 0.05 nên thỏa mãn giả thiết phương sai sai số thay đổi.
 
 –	Phương pháp Durbin-Watson kiểm tra hiện tượng tự tương quan:
+
  ![dw](https://github.com/datvu1502/Do_An_1/assets/118582440/2e61bd2f-6335-47ee-9930-39db37816ee9)
 
 => Giá trị DW ≈ 2, suy ra mô hình không có sự tự tương quan giữa các phần dư.
@@ -185,6 +200,7 @@ Như vậy, mô hình thỏa mãn các giả định cần thiết của phươn
 –	Trục hoành là giá trị thực tế.
 
 –	Đường màu cam là đường y_test = y_test_predict.
+
 ![sailech](https://github.com/datvu1502/Do_An_1/assets/118582440/3009bfc2-6907-4e05-b0d4-1adf5377846e)
 
 ## •	Nhận xét:
