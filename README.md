@@ -13,7 +13,8 @@ về mô hình hồi quy tuyến tính, mô hình hồi quy tuyến tính đơn,
 hợp của mô hình hồi quy tuyến tính đa biến và áp dụng mô hình vào việc ứng dụng, giải
 quyết bài toán dự báo thực tế.
 
-## THỬ NGHIỆM SỐ
+# THỬ NGHIỆM SỐ
+
 Bộ dữ liệu được sử dụng gồm có các đặc trưng sau:
 
 • Brand: Tên thương hiệu của xe.
@@ -38,8 +39,7 @@ Bộ dữ liệu được sử dụng gồm có các đặc trưng sau:
 
 • Price: Giá bán của xe.
 
-Thực hiện đổi biến năm sản xuất Year thành biến tuổi của xe Ageofcar. Bộ dữ liệu
-được sử dụng về giá của các loại xe cũ phổ thông, không dự báo về giá của các loại xe cổ.
+Thực hiện đổi biến năm sản xuất Year thành biến tuổi của xe Ageofcar. Bộ dữ liệu được sử dụng về giá của các loại xe cũ phổ thông, không dự báo về giá của các loại xe cổ.
 
 # Bước 1: Tiền xử lý dữ liệu
 ## • Tổng quan về bộ dữ liệu:
@@ -123,18 +123,17 @@ Sau khi loại bỏ outlier bộ dữ liệu còn 3918 hàng.
 ![train](https://github.com/datvu1502/Do_An_1/assets/118582440/1d018be2-11e9-40a3-a1e7-f865b368d7d2)
 
 –	Xây dựng mô hình bằng phương pháp bình phương cực tiểu-OLS có sẵn trong thư viện statsmodels.api với:
-∗ X: ’Kilometers’, ’Mileage’, ’Power’, ’Seats’,’Ageofcar’, ’Brand_BMW’, ’Brand_Ford’, ’Brand_Honda’, ’Brand_Hyundai’, ’Brand_Mahindra’,
-’Brand_Maruti’, ’Brand_Mercedes-Benz’, ’Brand_Toyota’, ’Brand_Volkswagen’,
 
- 
-’Fuel_LPG’, ’Fuel_Petrol’, ’Transmission_Manual’, ’Owner_Fourth&Above’, ’Owner_Second’, ’Owner_Third’.
+∗ X: ’Kilometers’, ’Mileage’, ’Power’, ’Seats’,’Ageofcar’, ’Brand_BMW’, ’Brand_Ford’, ’Brand_Honda’, ’Brand_Hyundai’, ’Brand_Mahindra’,
+’Brand_Maruti’, ’Brand_Mercedes-Benz’, ’Brand_Toyota’, ’Brand_Volkswagen’, ’Fuel_LPG’, ’Fuel_Petrol’, ’Transmission_Manual’, ’Owner_Fourth&Above’, ’Owner_Second’, ’Owner_Third’.
+
 ∗ Y: ’Price_log’.
  ![OLS1](https://github.com/datvu1502/Do_An_1/assets/118582440/7cae1e5a-5fd9-4398-9d3a-67936d613fb7)
 
 
 => Ta thấy giá trị R2 = 0.834 và R2 - hiệu chỉnh = 0.833 nên mô hình của chúng ta khá phù hợp với bộ dữ liệu.
-∗ Các hệ số β tương ứng với các biến ước lượng được. Biến phụ thuộc là
-log(Price).
+
+∗ Các hệ số β tương ứng với các biến ước lượng được. Biến phụ thuộc là log(Price).
  ![heso](https://github.com/datvu1502/Do_An_1/assets/118582440/26e352af-c555-4024-ac70-c9c7f52c0db3)
 
 
@@ -174,10 +173,13 @@ Như vậy, mô hình thỏa mãn các giả định cần thiết của phươn
 
 # Bước 3: Đánh giá mô hình
 •	Ta sử dụng bộ dữ liệu test để đánh giá mô hình.
+
 •	Từ mô hình với các giá trị β vừa tính được ta sẽ tính giá trị dự báo của bộ dữ liệu test và biểu diễn trên đồ thị:
+
  ![sosanh](https://github.com/datvu1502/Do_An_1/assets/118582440/b93e5ddb-5511-4ea5-85fe-47931b9d20f1)
 
 •	Trong đó:
+
 –	Trục tung là giá trị dự đoán sử dụng mô hình đã ước lượng trên bộ dữ liệu test.
 
 –	Trục hoành là giá trị thực tế.
@@ -202,6 +204,7 @@ Như vậy, mô hình thỏa mãn các giả định cần thiết của phươn
 Sự sai lệch này xuất hiện do một số yếu tố thực tế mà chưa đưa vào mô hình như: thị trường xe cũ, yếu tố cung cầu khi nghiên cứu, giá xe mới, chi phí thuế và một số chi phí khác,...
 
 # Kết luận:
+
 •	Mô hình dự báo giá xe cũ bằng phương pháp bình phương cực tiểu với hệ số xác định R2 = 0.834, khá cao và thỏa mãn các giả thiết mà phương pháp đặt ra .Từ đó cho thấy đây là một mô hình khá phù hợp để dự báo giá xe ô tô cũ.
 
 •	Mô hình có thể đưa thêm một số yếu tố để dự đoán hoặc tăng kích thước mẫu điều tra để cải thiện độ chính xác cả mô hình.
