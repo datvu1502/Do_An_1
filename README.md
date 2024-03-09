@@ -12,7 +12,7 @@ Lớp: Hệ thống thông tin 01-K65
 
 Học kỳ: 2022.2
 
-===========================
+===============================
 
 Hồi quy tuyến tính là phương pháp đơn giản nhưng hiệu quả để dự đoán và giải thích
 sự biến động của biến đầu ra dựa trên các biến đầu vào. Với tính linh hoạt và khả năng
