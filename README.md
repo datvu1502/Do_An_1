@@ -1,4 +1,18 @@
 # MÔ HÌNH HỒI QUY TUYẾN TÍNH VÀ ỨNG DỤNG TRONG DỰ BÁO
+Điểm số: 9.35 (Quá trình: 9 / Cuối kỳ: 9.5)
+--
+
+Giảng viên hướng dẫn: TS. Nguyễn Cảnh Nam
+
+Sinh viên thực hiện: Vũ Thành Đạt
+
+MSSV: 20206275
+
+Lớp: Hệ thống thông tin 01-K65
+
+Học kỳ: 2022.2
+
+===========================
 Hồi quy tuyến tính là phương pháp đơn giản nhưng hiệu quả để dự đoán và giải thích
 sự biến động của biến đầu ra dựa trên các biến đầu vào. Với tính linh hoạt và khả năng
 mô hình hóa các mối quan hệ tuyến tính giữa các biến, phương pháp này đã được sử dụng
