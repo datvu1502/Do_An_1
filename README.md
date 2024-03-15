@@ -1,4 +1,4 @@
-# ĐỒ ÁN 1: MÔ HÌNH HỒI QUY TUYẾN TÍNH VÀ ỨNG DỤNG TRONG DỰ BÁO GIÁ XE CŨ
+# Đồ án 1: MÔ HÌNH HỒI QUY TUYẾN TÍNH VÀ ỨNG DỤNG TRONG DỰ BÁO GIÁ XE CŨ
 Điểm số: 9.35 (Quá trình: 9 / Cuối kỳ: 9.5)
 --
 
